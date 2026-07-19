@@ -4,13 +4,13 @@
 <head>
     
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X4XGWEM6LC"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VTNHF7TQMV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-X4XGWEM6LC');
+  gtag('config', 'G-VTNHF7TQMV');
 </script>
     
     <meta charset="UTF-8">
@@ -98,13 +98,19 @@
         body.has-notice .social-box { top: 60px; }
         body.has-notice .vip-trigger-box { top: 60px; }
 
+        /* Server Box Update: Added Max-width & Visible Scrollbar */
         .server-box {
-            position: absolute; left: 50%; z-index: 9999; display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+            position: absolute; left: 50%; z-index: 9999; display: flex; gap: 8px; flex-wrap: nowrap; justify-content: flex-start;
             background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); padding: 8px 12px; border-radius: 40px; 
             border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 10px 30px rgba(0,0,0,.3);
             bottom: 95px; top: auto !important; transform: translateX(-50%); transition: all 0.4s ease;
             opacity: 1; visibility: visible;
+            max-width: 850px; overflow-x: auto; -webkit-overflow-scrolling: touch;
         }
+        .server-box::-webkit-scrollbar { height: 6px; }
+        .server-box::-webkit-scrollbar-track { background: transparent; margin: 0 15px; }
+        .server-box::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.3); border-radius: 10px; }
+        .server-box::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.6); }
         :fullscreen .server-box, :-webkit-full-screen .server-box { display: none !important; }
 
         .global-live-badge { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 20px; padding: 0 14px; height: 32px; display: flex; align-items: center; font-size: 12px; font-weight: 700; letter-spacing: .5px; color: #fff; text-transform: uppercase; }
@@ -118,7 +124,7 @@
         .btn-fb{background:rgba(24,119,242,.2);border:1px solid rgba(24,119,242,.4);color:#6db0ff}.btn-fb:hover{background:#1877F2;color:#fff}
         .btn-tg{background:rgba(34,158,217,.2);border:1px solid rgba(34,158,217,.4);color:#6fc8ff}.btn-tg:hover{background:#229ED9;color:#fff}
         
-        .server-btn{background:0 0;color:#ccc;padding:8px 16px;border-radius:30px;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s;border:none;position:relative;}
+        .server-btn{background:0 0;color:#ccc;padding:8px 16px;border-radius:30px;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s;border:none;position:relative;white-space:nowrap;}
         .server-btn:hover{background:rgba(255,255,255,.1);color:#fff}
         .server-btn.active{background:rgba(255,255,255,0.2);color:#fff;box-shadow:0 4px 15px rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.4); font-weight:700}
                 
@@ -162,7 +168,7 @@
                 bottom: 75px !important; width: calc(100% - 40px); box-sizing: border-box;
                 flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; -webkit-overflow-scrolling: touch; 
             }
-            .server-box::-webkit-scrollbar { display: none; }
+            .server-box::-webkit-scrollbar { display: none; } /* Mobile-e scrollbar hide kora ache touch scroll er jonno */
             .server-btn { white-space: nowrap; margin-top: 5px; }
         }
     </style>
@@ -171,22 +177,21 @@
 
 <div id="sticky-header-notice" class="sticky-notice">
     <div class="marquee-wrapper">
-        <span class="marquee-text">✨ Welcome! Fast • Secure • Smooth Experience — Stay Connected with Our Official Website.</span>
+        <span class="marquee-text">kireee rakib khoniker sele</span>
     </div>
     <button class="close-btn" onclick="dismissNotice()">&times;</button>
 </div>
 
 <div class="vip-trigger-box">
-            <button class="btn-vip-float" onclick="openVipModal()">🤝 Get VIP Access</button>
+            <button class="btn-vip-float" onclick="openVipModal()">👑 Get VIP Access</button>
     </div>
 
 <div id="vip-modal">
     <div class="vip-box">
         <button class="close-vip" onclick="closeVipModal()">&times;</button>
         <h2>👑 VIP PREMIUM</h2>
-        <p>Unlock exclusive premium features and enjoy an ad-free experience.
-Complete a one-time payment of only</p>
-        <a href="https://t.me/+MKES64ZsFeFlM2Jl" target="_blank" class="btn-donate">🤝 Donate via Telegram</a>
+        <p>লাইভ খেলা বিনা বাফারে দেখতে কমপক্ষে 50TK ডোনেট করে VIP এক্সেস নিন।</p>
+        <a href="https://t.me/+RXaFr9oBaEczZjIx" target="_blank" class="btn-donate">🤝 Donate via Telegram</a>
         
         <div class="pin-section">
             <p style="margin:0 0 10px; color:#aaa; font-size:13px; text-transform:uppercase; font-weight:bold;">Already have a PIN?</p>
@@ -212,35 +217,41 @@ Complete a one-time payment of only</p>
 </div>
 
 <div class="server-box">
-                    <button id="btn-0" class="server-btn badge-hd active" onclick="changeServer('https://live1.streambylivepulse.com/live/channel5/playlist.m3u8?wsSecret=f805d01587a0bbb0087d7427b94240d9&wsABSTime=1784449464', 0, 'HD')">
+                    <button id="btn-0" class="server-btn badge-hd active" onclick="changeServer('https://content-aapm1.uplynk.com/d02ee5c1fec645c58a072849f22609d5/f.m3u8?pbs=ed78b96eaacb4fc19170a47dddac4e15', 0, 'HD')">
             HD 1        </button>
-                    <button id="btn-1" class="server-btn badge-hd " onclick="changeServer('https://tfxo0gr4uqmtt8y41hcjugwzdkpjpptwzc3jt.100ycdn.com/live1.streambylivepulse.com/live/channel16/playlist.m3u8?wsSecret=e345113a82137a6f1474f90cae26adaf&wsABSTime=1784449590&wsSession=b6a156d7a43b8aec044b01e7-178440639129026&wsIPSercert=071f57b283853b3ba47e3356fea79613&wsBindIP=2&wsserid=1168227343495781702', 1, 'HD')">
-            HD 2        </button>
-                    <button id="btn-2" class="server-btn badge-hd " onclick="changeServer('https://pull.niues.live/live/stream-9912060_lhd.m3u8?auth_key=1783284383-0-0-ba541e77b9330eab42075af6aa5029e4', 2, 'HD')">
-            HD 3        </button>
-                    <button id="btn-3" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/fox-usa', 3, 'Embed')">
+                    <button id="btn-1" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/ddsports-in', 1, 'Embed')">
+            HD 4        </button>
+                    <button id="btn-2" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/fox-usa', 2, 'Embed')">
             FHD 1        </button>
-                    <button id="btn-4" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/bbcone-uk', 4, 'Embed')">
+                    <button id="btn-3" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/telemundo-usa', 3, 'Embed')">
             FHD 2        </button>
-                    <button id="btn-5" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/beinsportsmax-sa', 5, 'Embed')">
+                    <button id="btn-4" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/universo-usa', 4, 'Embed')">
             FHD 3        </button>
-                    <button id="btn-6" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/fox4k-usa', 6, 'Embed')">
+                    <button id="btn-5" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/beinsportsmax-sa', 5, 'Embed')">
+            FHD 4        </button>
+                    <button id="btn-6" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/daznmundial-es', 6, 'Embed')">
+            FHD 5        </button>
+                    <button id="btn-7" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/tsn1-ca', 7, 'Embed')">
+            FHD 6        </button>
+                    <button id="btn-8" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/cazetv-br', 8, 'Embed')">
+            FHD 7        </button>
+                    <button id="btn-9" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/fox4k-usa', 9, 'Embed')">
             4K 1        </button>
-                    <button id="btn-7" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/fussballtv1uhd-de', 7, 'Embed')">
+                    <button id="btn-10" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/fussballtv1uhd-de', 10, 'Embed')">
             4K 2        </button>
+                    <button id="btn-11" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/rai4k-it', 11, 'Embed')">
+            4K 3        </button>
+                    <button id="btn-12" class="server-btn badge-embed " onclick="changeServer('https://logic.icelanders.st/embed/beinsportsuhd-sa', 12, 'Embed')">
+            4K 4        </button>
     </div>
 
 <div class="global-live-indicator-box" id="liveIndicator">
     <div class="global-live-badge">Live</div>
-        <div class="vjs-view-counter" title="Watching Now">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-        <span id="liveViewerCount">0</span>
-    </div>
     </div>
 
 <div id="vjs-wrapper" style="display: block;">
     <video id="live-player" class="video-js vjs-default-skin vjs-big-play-centered" controls autoplay muted playsinline preload="metadata">
-                <source src="https://live1.streambylivepulse.com/live/channel5/playlist.m3u8?wsSecret=f805d01587a0bbb0087d7427b94240d9&wsABSTime=1784449464" type="application/x-mpegURL">
+                <source src="https://content-aapm1.uplynk.com/d02ee5c1fec645c58a072849f22609d5/f.m3u8?pbs=ed78b96eaacb4fc19170a47dddac4e15" type="application/x-mpegURL">
             </video>
 </div>
 
@@ -290,8 +301,8 @@ Complete a one-time payment of only</p>
     }
 
     const isLockerEnabled = true;
-    const isCounterEnabled = true;
-    const baseViewsAmount = 11855;
+    const isCounterEnabled = false;
+    const baseViewsAmount = 100;
 
     const isTV = /SmartTV|Tizen|WebOS|BRAVIA|Android TV|AppleTV|Roku|TV/i.test(navigator.userAgent);
     if (isTV) { localStorage.setItem('isPremiumUnlocked', 'true'); }
@@ -300,10 +311,10 @@ Complete a one-time payment of only</p>
         window.open('https://www.facebook.com/profile.php?id=61576717240013','_blank');
         document.getElementById('fbLockerBtn').style.display='none';
         let e=document.getElementById('lockerCountdown');e.style.display='block';
-        let n=5,t=['0','1','2','3','4','✅'];
+        let n=5,t=['০','১','২','৩','৪','৫'];
         document.getElementById('countNumber').innerText=t[n];
-        let o=setInterval((function(){document.hidden||!document.hasFocus()?(n--,n>=0&&(e.innerHTML=`⏳ অনুগ্রহ করে অপেক্ষা করুন... <span id="countNumber">${t[n]}</span> সেকেন্ড বাকি`),n<=0&&(clearInterval(o),localStorage.setItem('isPremiumUnlocked','true'),location.reload())):e.innerHTML=`⚠️ এই ট্যাবটি সক্রিয় রাখুন...  <span id="countNumber">${t[n]}</span>`}),1e3)
-}
+        let o=setInterval((function(){document.hidden||!document.hasFocus()?(n--,n>=0&&(e.innerHTML=`চেক করা হচ্ছে... <span id="countNumber">${t[n]}</span> সেকেন্ড`),n<=0&&(clearInterval(o),localStorage.setItem('isPremiumUnlocked','true'),location.reload())):e.innerHTML=`আগে পেজ ফলো করুন, তারপর আবার ব্যাক আসুন...  <span id="countNumber">${t[n]}</span>`}),1e3)
+    }
 
     var hlsFluid = null;
     var fluidPlayerInstance = null;
@@ -331,11 +342,11 @@ Complete a one-time payment of only</p>
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-        var serverList = ["https:\/\/live1.streambylivepulse.com\/live\/channel5\/playlist.m3u8?wsSecret=f805d01587a0bbb0087d7427b94240d9&wsABSTime=1784449464","https:\/\/tfxo0gr4uqmtt8y41hcjugwzdkpjpptwzc3jt.100ycdn.com\/live1.streambylivepulse.com\/live\/channel16\/playlist.m3u8?wsSecret=e345113a82137a6f1474f90cae26adaf&wsABSTime=1784449590&wsSession=b6a156d7a43b8aec044b01e7-178440639129026&wsIPSercert=071f57b283853b3ba47e3356fea79613&wsBindIP=2&wsserid=1168227343495781702","https:\/\/pull.niues.live\/live\/stream-9912060_lhd.m3u8?auth_key=1783284383-0-0-ba541e77b9330eab42075af6aa5029e4","https:\/\/logic.icelanders.st\/embed\/fox-usa","https:\/\/logic.icelanders.st\/embed\/bbcone-uk","https:\/\/logic.icelanders.st\/embed\/beinsportsmax-sa","https:\/\/logic.icelanders.st\/embed\/fox4k-usa","https:\/\/logic.icelanders.st\/embed\/fussballtv1uhd-de"];
-        var qualityList = ["HD","HD","HD","Embed","Embed","Embed","Embed","Embed"];
+        var serverList = ["https:\/\/content-aapm1.uplynk.com\/d02ee5c1fec645c58a072849f22609d5\/f.m3u8?pbs=ed78b96eaacb4fc19170a47dddac4e15","https:\/\/logic.icelanders.st\/embed\/ddsports-in","https:\/\/logic.icelanders.st\/embed\/fox-usa","https:\/\/logic.icelanders.st\/embed\/telemundo-usa","https:\/\/logic.icelanders.st\/embed\/universo-usa","https:\/\/logic.icelanders.st\/embed\/beinsportsmax-sa","https:\/\/logic.icelanders.st\/embed\/daznmundial-es","https:\/\/logic.icelanders.st\/embed\/tsn1-ca","https:\/\/logic.icelanders.st\/embed\/cazetv-br","https:\/\/logic.icelanders.st\/embed\/fox4k-usa","https:\/\/logic.icelanders.st\/embed\/fussballtv1uhd-de","https:\/\/logic.icelanders.st\/embed\/rai4k-it","https:\/\/logic.icelanders.st\/embed\/beinsportsuhd-sa"];
+        var qualityList = ["HD","Embed","Embed","Embed","Embed","Embed","Embed","Embed","Embed","Embed","Embed","Embed","Embed"];
         var currentServerIndex = 0, isSwitching = !1;
         var defaultQuality = 'HD';
-        var defaultStream = 'https://live1.streambylivepulse.com/live/channel5/playlist.m3u8?wsSecret=f805d01587a0bbb0087d7427b94240d9&wsABSTime=1784449464';
+        var defaultStream = 'https://content-aapm1.uplynk.com/d02ee5c1fec645c58a072849f22609d5/f.m3u8?pbs=ed78b96eaacb4fc19170a47dddac4e15';
 
         var initPlayers = function() {
             if(typeof videojs === 'undefined') {
@@ -453,6 +464,6 @@ Complete a one-time payment of only</p>
     document.addEventListener('MSFullscreenChange', manageScreenOrientation);
 </script>
 
-
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"85f045b8d055417a8bddf043c408e8b3","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
